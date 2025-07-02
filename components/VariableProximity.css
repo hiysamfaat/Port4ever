@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
+.variable-proximity-demo {
+  font-family: 'Roboto Flex', 'Inter var', 'Inter', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-variation-settings: 'wght' 400, 'opsz' 9;
+  color: white;
+  transition: font-variation-settings 0.2s;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.variable-proximity {
+  font-family: "Roboto Flex", sans-serif;
+  color: white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
