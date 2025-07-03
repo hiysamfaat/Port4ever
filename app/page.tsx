@@ -133,67 +133,30 @@ export default function Portfolio() {
     <div className="min-h-screen bg-black text-white">
       {/* Navbar */}
       <nav className="w-full fixed top-0 left-0 z-50 bg-transparent">
-        <div className="container mx-auto px-4 flex flex-row items-center justify-between h-20">
+        <div className="container mx-auto px-2 sm:px-4 flex flex-row items-center justify-between h-16 sm:h-20">
           <div className="flex items-center">
           </div>
-          {/* Hamburger button for mobile */}
-          <button
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-            aria-label="Toggle menu"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-          >
-            <span className={`block h-0.5 w-6 bg-purple-400 transition-all duration-300 mb-1 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-            <span className={`block h-0.5 w-6 bg-purple-400 transition-all duration-300 mb-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block h-0.5 w-6 bg-purple-400 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-          </button>
-          {/* Desktop menu */}
-          <ul className="hidden md:flex gap-4 md:gap-8 text-base md:text-lg font-medium justify-center mx-auto">
+          <ul className="flex flex-wrap gap-2 sm:gap-4 md:gap-8 text-xs sm:text-base md:text-lg font-medium justify-center mx-auto">
             <li>
-              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-4 py-2 rounded transition-colors duration-200" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</button>
+              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-2 sm:px-4 py-1 sm:py-2 rounded transition-colors duration-200" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</button>
             </li>
             <li>
-              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-4 py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>About</button>
+              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-2 sm:px-4 py-1 sm:py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>About</button>
             </li>
             <li>
-              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-4 py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}>Team</button>
+              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-2 sm:px-4 py-1 sm:py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}>Team</button>
             </li>
             <li>
-              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-4 py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>Skills</button>
+              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-2 sm:px-4 py-1 sm:py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>Skills</button>
             </li>
             <li>
-              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-4 py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>Projects</button>
+              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-2 sm:px-4 py-1 sm:py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>Projects</button>
             </li>
             <li>
-              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-4 py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Contacts</button>
+              <button className="hover:text-purple-400 hover:bg-purple-900/20 px-2 sm:px-4 py-1 sm:py-2 rounded transition-colors duration-200" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Contacts</button>
             </li>
           </ul>
         </div>
-        {/* Mobile menu overlay */}
-        {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-black/80 z-40" onClick={() => setIsMenuOpen(false)}></div>
-        )}
-        <ul
-          className={`md:hidden fixed top-20 left-0 w-full bg-gray-900/95 z-50 flex flex-col items-center gap-2 py-6 shadow-lg transition-all duration-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0 pointer-events-none'}`}
-        >
-          <li>
-            <button className="w-full text-left px-6 py-3 text-lg hover:text-purple-400 hover:bg-purple-900/20 transition-colors duration-200" onClick={() => { setIsMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Home</button>
-          </li>
-          <li>
-            <button className="w-full text-left px-6 py-3 text-lg hover:text-purple-400 hover:bg-purple-900/20 transition-colors duration-200" onClick={() => { setIsMenuOpen(false); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</button>
-          </li>
-          <li>
-            <button className="w-full text-left px-6 py-3 text-lg hover:text-purple-400 hover:bg-purple-900/20 transition-colors duration-200" onClick={() => { setIsMenuOpen(false); document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' }); }}>Team</button>
-          </li>
-          <li>
-            <button className="w-full text-left px-6 py-3 text-lg hover:text-purple-400 hover:bg-purple-900/20 transition-colors duration-200" onClick={() => { setIsMenuOpen(false); document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' }); }}>Skills</button>
-          </li>
-          <li>
-            <button className="w-full text-left px-6 py-3 text-lg hover:text-purple-400 hover:bg-purple-900/20 transition-colors duration-200" onClick={() => { setIsMenuOpen(false); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>Projects</button>
-          </li>
-          <li>
-            <button className="w-full text-left px-6 py-3 text-lg hover:text-purple-400 hover:bg-purple-900/20 transition-colors duration-200" onClick={() => { setIsMenuOpen(false); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contacts</button>
-          </li>
-        </ul>
       </nav>
       {/* Removed the h-20 spacer to prevent black background behind navbar */}
       {/* Hero Section */}
@@ -424,7 +387,7 @@ export default function Portfolio() {
                 };
                 return (
                   <div
-                    key={index}
+                  key={index}
                     className="flex flex-col items-center justify-center bg-gray-800 border border-purple-500/10 rounded-lg shadow-sm p-4 transition-all duration-200 hover:shadow-lg hover:border-purple-400 hover:bg-gray-800/80 cursor-pointer min-h-[110px] min-w-0"
                     style={{ minWidth: 0 }}
                   >
@@ -436,7 +399,7 @@ export default function Portfolio() {
                       </span>
                     )}
                     <span className="text-sm md:text-base text-purple-200 font-medium text-center truncate w-full">
-                      {skill}
+                  {skill}
                     </span>
                   </div>
                 );
